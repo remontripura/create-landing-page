@@ -15,8 +15,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<Layout />}>
           <Route index element={<HomeComponent />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/login" element={<LoginPage />} />
         </Route>
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </StrictMode>
   </BrowserRouter>

@@ -3,10 +3,10 @@ import { Outlet } from "react-router";
 import NavbarComponent from "../Components/Shared/Navbar/NavbarComponent";
 
 const Layout = () => {
-  return <div>
+  return <>
     <NavbarComponent />
     <Outlet />
-  </div>;
+  </>;
 };
 
 export default Layout;
