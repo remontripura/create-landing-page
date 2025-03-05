@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
 
-const LoginComponents = () => {
+const SignUpComponents = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => console.log(data);
@@ -12,11 +12,21 @@ const LoginComponents = () => {
       <div className="flex justify-center items-center w-full h-full">
         <div className="w-[500px] py-8 bg-white rounded shadow-md px-3">
           <h6 className="font-bold text-[32px] text-black text-center">
-            Login
+            Sign Up
           </h6>
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-5">
+              <div>
+                <h6 className="font-semibold text-[18px] mb-1">Name</h6>
+                <input
+                  className="w-full px-3 py-3 border rounded-md"
+                  defaultValue="test"
+                  type="name"
+                  {...register("emails")}
+                  placeholder="Enter Your Name"
+                />
+              </div>
               <div>
                 <h6 className="font-semibold text-[18px] mb-1">Email</h6>
                 <input
@@ -27,6 +37,7 @@ const LoginComponents = () => {
                   placeholder="Enter Your Email"
                 />
               </div>
+
               <div>
                 <h6 className="font-semibold text-[18px] mb-1">Password</h6>
                 <input
@@ -37,7 +48,13 @@ const LoginComponents = () => {
                   placeholder="Enter Your Password"
                 />
               </div>
-              <p>Don't have an account? <Link to="/sign-up" className="text-blue-500">Sign Up</Link> </p>
+              <p>
+                Allready have an account?{" "}
+                <Link to="/login" className="text-blue-500">
+                  Log-In
+                </Link>{" "}
+              </p>
+
               <button
                 type="submit"
                 className="bg-yellow-500 w-full py-2 rounde-lg font-semibold"
@@ -52,4 +69,4 @@ const LoginComponents = () => {
   );
 };
 
-export default LoginComponents;
+export default SignUpComponents;
